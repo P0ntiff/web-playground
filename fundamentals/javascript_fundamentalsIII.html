@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<p>
+  <script>
+  //modern mode
+  "use strict";
+
+  //loops
+  let i = 0;
+  while (i < 3) {
+    //alert(i);
+    i++;
+  }
+  let condition = false;
+  do {
+    //will be executed
+    //alert("this is a do statement");
+  } while (condition);
+
+  //for loop
+  for (let i = 0; i < 3; i++) {
+    //alert(i);
+  }
+  //can remove the step part of for
+  //for (;;) {  //infinite loop }
+  //can break/continue
+
+
+  //labels for break/continue
+  outer: for (let i = 0; i <= 1; i++) {
+    for (let j = 0; j <= 1; j++) {
+      if (!condition) break outer; // (*)
+    }
+  }
+
+  //switch statement
+  let a = 2 + 2;
+  switch (a) {
+    case 3:
+      alert( 'Too small' );
+      break;
+    case 4:
+      alert( 'Exactly!' );
+      break;
+    case 4.5: //case grouping
+    case 5:
+      alert( 'Too large' );
+      break;
+    default:
+      alert( "I don't know such values" );
+  }
+
+  </script>
+
+</p>
+</body>
+
+</html>

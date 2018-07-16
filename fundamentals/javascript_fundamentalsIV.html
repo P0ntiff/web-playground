@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<p>
+  <script>
+  //modern mode
+  "use strict";
+
+  //functions
+  let greeted = "World!";
+  function showMessage() {
+    document.write("Hello " + greeted);
+  }
+  //showMessage();
+
+  //functions take local copies and do not modify exterior copies
+  //default values can be passed in
+  function showMessage(from, text = "no text given") {
+    document.write( from + ": " + text );
+    return from + text;
+  }
+
+  showMessage("Ann", "hello"); // Ann: no text given
+
+
+  //can do empty return statements
+  //but NEVER add a newline between return and the value
+
+
+  </script>
+
+</p>
+</body>
+
+</html>
