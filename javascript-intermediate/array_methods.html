@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <p>
+    <h1> JS Sandboxing </h1>
+  </p>
+  <p>
+    <script>
+      "use modern";
+
+      //mapping (applying a function to an array)
+      //let result = arr.map(function(item, index, array) {//returns the new value instead of item }
+      let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length)
+      alert(lengths); // 5,7,6
+
+      //reducing (result of the previous call becomes the first argument of the next)
+      let arr = [1, 2, 3, 4, 5];
+      let result = arr.reduce((sum, current) => sum + current, 0);
+      alert(result); // 15
+
+      //reduce syntax
+      //let value = arr.reduce(function(previousValue, item, index, arr) {
+      //  //...
+      //}, initial);
+
+      //forEach
+      ["Bilbo", "Gandalf", "Nazgul"].forEach((item, index, array) => {
+       alert(`${item} is at index ${index} in ${array}`);
+      });
+
+      //filter
+      let user = {
+        age: 18,
+        younger(otherUser) {
+          return otherUser.age < this.age;
+        }
+      };
+      let users = [
+        {age: 12},
+        {age: 16},
+        {age: 32}
+      ];
+      // find all users younger than user
+      //second param --> thisArg
+      let youngerUsers = users.filter(user.younger, user);
+
+      //sorting (pass in comparator)
+      function compareNumeric(a, b) {
+        if (a > b) return 1;
+        if (a == b) return 0;
+        if (a < b) return -1;
+      }
+      let arr = [ 1, 2, 15 ];
+      arr.sort(compareNumeric);
+      alert(arr); // 1, 2, 15
+
+      //or for shorthand
+      arr.sort( (a, b) => a - b );
+
+      //reverse an array
+      arr.reverse()
+
+
+
+    </script>
+  </p>
+
+
+</body>
+
+</html>

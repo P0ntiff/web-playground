@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Test</title>
+    <link rel="stylesheet" href="/Users/gattas_b/node_modules/mocha/mocha.css" />
+    <script src="/Users/gattas_b/node_modules/mocha/mocha.js"></script>
+
+    <!--minimal setup -->
+    <script> mocha.setup('bdd'); </script>
+
+    <!-- add aserts -->
+    <script src="/Users/gattas_b/node_modules/chai/lib/chai.js"></script>
+    <script>
+      var assert = chai.assert;
+    </script>
+  </head>
+  <body>
+
+    <script>
+    function pow(x, n) {
+      let result = 1;
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+      return result;
+    }
+    </script>
+
+    <!--script with tests -->
+    <script src="tests.js"></script>
+
+    <div id="mocha"></div>
+
+    <!-- run tests -->
+    <script>
+      mocha.run();
+    </script>
+
+  </body>
+</html>

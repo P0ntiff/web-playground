@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <p>
+    <h1> JS Sandboxing </h1>
+  </p>
+  <p>
+    <script>
+      "use modern";
+
+      //Object method examples
+      let user = {
+        name : "John",
+        age : 30
+        //sayHi : function() {
+        //}
+      }
+      };
+      user.sayHi = function() {
+        alert("Hello!");
+      };
+      user.sayHi();
+
+      //or, shorthand for object literals
+      let user = {
+       sayHi() { // same as "sayHi: function()"
+         alert("Hello");
+       }
+      };
+
+      //this keyword
+      let user = {
+        name : "John",
+        age : 30,
+        sayHi() { // same as "sayHi: function()"
+          alert(this.name);
+        }
+      };
+
+      //this is not bound to the object that calls it
+      //arrow functions have no this (i.e useful when we do want a seperate this)
+
+      //defining an object with constructor capital letter notation (and assigning to this)
+      function User(name) {
+        this.name = name;
+        this.isAdmin = false;
+      }
+      let user = new User("Jack");
+
+
+    </script>
+  </p>
+
+
+</body>
+
+</html>

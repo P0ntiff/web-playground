@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <p>
+    <h1> JS Sandboxing </h1>
+  </p>
+  <p>
+    <script>
+      //Objects
+
+      //literal
+      let user = {
+        name: "John",
+        age: 30,
+        "likes birds" : true,
+      };
+
+      //working with properties
+      let userName = user.name;
+      delete user.age;
+      let key = "likes birds";
+      let userBirdStatus = user[key];
+
+      //computed properties
+      let fruit = prompt("Which fruit to buy?", "apple");
+      let bag = {
+       [fruit]: 5, // the name of the property is taken from the variable fruit
+      };
+      //or bag[fruit] = 5;
+
+      function makeUser(name ,age) {
+        return {
+          name, //shorthand for name: name
+          age   //shorthand for age: age
+        }
+      }
+      let tom = makeUser("Tom", 20);
+
+      //property existence check
+      tom.noSuchProperty === undefined;
+      //or
+      key = "nonExistentProperty";
+      //key in tom;
+
+      let obj = {
+        name : "John",
+        age : 30,
+        isAdmin : true
+      }
+      for (let prop in obj) {
+        //keys
+        alert( key );
+        //values
+        alert( obj[prop] );
+      }
+
+      //Objects are copied by reference
+      let admin = tom;
+      admin.name = 'Pete';
+      //tom.name has changed
+
+      //Objects are equal only if they reference the same object
+      let a = {};
+      let b = a; // copy the reference
+      alert( a == b ); // true, both variables reference the same object
+      alert( a === b ); // true   (strict equality)
+
+      //to duplicate object (i.e seperate object and seperate reference)
+      //need to copy values across one by one
+      //or with 'let clone = Object.assign({}, user);'
+
+      //merge properties into an object
+      let user = { name : "John" }
+      let permissions1 = { canView: true };
+      let permissions2 = { canEdit: true };
+      // copies all properties from permissions1 and permissions2 into user
+      Object.assign(user, permissions1, permissions2);
+      // now user = { name: "John", canView: true, canEdit: true }
+
+
+      //Can use Symbol() primitive type for unique identifiers
+
+
+    </script>
+  </p>
+
+
+</body>
+
+</html>

@@ -64,7 +64,26 @@
   let b = new Array("cat", "dog", 53, true);
   let c = ["dog", "cat", 53, true];
 
+  let fruits = ["Apple", "Orange", "Plum"];
+  // iterates over array elements (values)
+  for (let fruit of fruits) {
+    //alert( fruit );
+  }
+  
 
+  //array splitting (join() does the oppsite)
+  let names = 'Bilbo, Gandalf, Nazgul';
+  let arr = names.split(', ');
+  for (let name of arr) {
+    alert( `A message to ${name}.` ); // A message to Bilbo (and other names)
+  }
+
+  //arrays are copied by reference (as it is an object)
+  //can end with a trailing comma
+
+  //indexOf, lastIndexOf
+
+  //slicing and dicing methods: splice(), slice(), concat(), etc
   </script>
 
 </p>
